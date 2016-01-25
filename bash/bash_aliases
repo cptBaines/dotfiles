@@ -1,0 +1,5 @@
+alias ls='ls -F'
+alias se='setxkbmap -layout se -option ctrl:nocaps'
+alias us='setxkbmap -layout us -option ctrl:nocaps'
+alias wlanhome='sudo /sbin/ifup wlan0=ghostnet'
+alias tmux='TERM=xterm-256color tmux'

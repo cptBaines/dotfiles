@@ -1,0 +1,134 @@
+" ===========================================================================
+" Settings
+" ===========================================================================
+
+
+" Check where we are running
+if $OS == "Windows_NT"
+	echom "Windows"	
+	let g:myvimfiles = "$USERPROFILE\dotfiles\vim\vimfiles"
+else
+	echom "POSIX"	
+	let g:myvimfiles = "~/dotfiles/vim/vimfiles"	
+endif
+
+" Runtime path {{{
+let &rtp = myvimfiles
+set rtp+=$VIM/vimfiles
+set rtp+=$VIM/vim74
+set rtp+=$VIM/vimfiles/after
+let &rtp = &rtp .",". myvimfiles . "/after"
+" }}}
+
+" Direcotries {{{
+set backupdir=$DOTFILES/vim/vimfiles/cache//
+set backupdir+=/tmp//
+set directory=$DOTFILES/vim/vimfiles/cache//
+set directory+=/tmp//
+" }}}
+
+set foldmethod=marker
+colorscheme mycolor
+
+" Enable patogen
+execute pathogen#infect(myvimfiles . '/bundle/{}')
+
+" Enable filtype stuff
+filetype on
+filetype plugin on
+filetype indent on
+
+" Enable syntax highlighting
+syntax on
+
+" choose easy readable colors
+"colorscheme mycolor
+
+" Fix statusline hilighting
+"hi StatusLine cterm=bold
+"hi StatusLineNC cterm=reverse
+
+" Setup linenumbering
+" set number 
+set relativenumber
+
+" configure tags
+set tags+=~/.vim/tags/stdc
+
+" Show me when i'm over 80 columns wide
+call matchadd('colorcolumn', '\%81v', 100)
+
+" Contol the character shown for the list command
+exec "set listchars=tab:>\uBB,trail:~,nbsp:_,eol:$"
+
+" Choose a desentgui font
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13
+
+" Make it ok to have an unwritten buffer that is not visible
+set hidden
+
+" disable bloody beeping
+set vb
+
+" tweak the statusline and show it even if we just have one window
+set stl=%f\ %{fugitive#statusline()}\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:\ #%n\ [%b][0x%B]
+set laststatus=2 
+
+" Get rid of the menubar, its just in the way
+set guioptions=ac
+
+" Keep some history
+set history=10
+
+" set commandline height to two rows
+set ch=2
+
+" Make the 'cw' and like commands put a $ at the end instead of just deliting
+" the text and replacing it. B is included to handle conflicts with snipmate
+set cpoptions=Bces$
+
+" Don't update the display while executing macros
+set lazyredraw
+
+" Show the current command in the lower right cornder
+set showcmd
+
+" Show the current mode
+set showmode
+
+" When the page starts to scroll, keep the cursor 8 lines from the top and 8
+" lines from the bottom
+set scrolloff=8
+
+" expand tabs no, no
+set noexpandtab
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_MayCompleteDot = 1
+let OmniCpp_MayCompleteArrow = 1
+let OmniCpp_MayCompleteScope = 1 
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
+
+source $DOTFILES/vim/mappings
+
+" ===========================================================================
+" Functions 
+" ===========================================================================
+function! Addsequence()
+	exe "normal! 02wywkiCREATE SEQUENCE \<Esc>pi_seq increment by 1;\<Esc>"
+	exe "normal! jj$ha default nextval('\<Esc>pi_seq'::regclass)\<Esc>"
+endfunction
+
+" ===========================================================================
+" Sourceig other files
+" ===========================================================================
+" source .vim/myfunc/workJournal.vim
+

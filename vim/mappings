@@ -1,0 +1,62 @@
+" ===========================================================================
+" Mappings
+" ===========================================================================
+
+let mapleader = ","
+
+" Movements {{{
+noremap <silent> <C-h> :wincmd h<cr>
+noremap <silent> <C-l> :wincmd l<cr>
+noremap <silent> <C-j> :wincmd j<cr>
+noremap <silent> <C-k> :wincmd k<cr>
+" }}}
+" Git {{{ 
+nnoremap <silent> <leader>ga :Git add %:p<CR><CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit -v -q<CR>
+nnoremap <silent> <leader>gt :Gcommit -v -q %:p<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>ge :Gedit<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap          <leader>gp :Grep<space>
+nnoremap          <leader>gm :Gmove<space>
+nnoremap          <leader>gb :Git branch<space>
+nnoremap          <leader>go :Git checkout<space>
+nnoremap          <leader>gps :Dispatch! git push<CR>
+nnoremap          <leader>gpl :Dispatch! git push<CR>
+" }}}
+" ctags {{{
+" build tags for your own project with CTRL+F12
+noremap <F12> :!ctags -R --c++-kinds=+p --c-kinds=+px-d --fields=+iaS --extra=+q --languages=C,C++ .<CR> 
+" }}}
+" edit vimrc {{{
+" Make it easy to edit vimrc (mnemonic is 'e'dit 'v'imrc)
+nnoremap <silent> <leader>ev :e $MYVIMRC<cr>
+
+" Make it easy to source the changed settings (mnemonic is 's'ource 'v'imrc)
+nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
+" }}}
+" spelling {{{
+nnoremap <silent> <leader>sse :set spelllang=se<cr>
+nnoremap <silent> <leader>sen :set spelllang=en<cr>
+nnoremap <silent> <leader>tsp :set spell!<cr>
+" }}}
+" grep mapping
+"nnoremap ,g execute ":grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+nnoremap <silent> <leader>G :echom "execute grep! . '<cWORD>' ."<cr>
+
+
+" cd to the directory containing the file in the buffer
+nnoremap <leader>cd :lcd %:h<cr>
+
+" disable highlight search
+nnoremap <leader>n :set invhls:set hls?<cr>
+
+inoremap <esc> <nop>
+inoremap jk <esc>
+
+" cscope mapping
+" mnemonic is f(ind) s(ymbol)
+nnoremap <leader>fs :cs find s <c-r>=expand("<cword>")<cr><cr>

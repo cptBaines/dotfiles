@@ -1,0 +1,12 @@
+[submodule "vim/vimfiles/bundle/vim-fugitive"]
+	path = vim/vimfiles/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/vimfiles/bundle/vim-vinegar"]
+	path = vim/vimfiles/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "vim/vimfiles/bundle/vim-surround"]
+	path = vim/vimfiles/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/vimfiles/bundle/vim-riv"]
+	path = vim/vimfiles/bundle/vim-riv
+	url = https://github.com/Rykka/riv.vim.git

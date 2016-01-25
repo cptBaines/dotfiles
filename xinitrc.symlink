@@ -1,0 +1,15 @@
+#!/bin/bash
+
+xsetroot -solid grey
+
+# Disable touchpad for 1 second after I stop typing
+syndeamon -i 1 -d
+
+# Tweek synaptics driver
+synclient HorizTwoFingerScroll=1
+
+# Load background picture on root window
+# WINID=`xwininfo -root | grep 'Window id:' | sed '/.*\(0x[^ ]*\) .*/\1/'`
+# display -window $WINID background.png &
+xterm -geometry 82x41-6+2 &
+exec openbsd-cwm

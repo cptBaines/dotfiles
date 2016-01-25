@@ -1,0 +1,56 @@
+# ~/.bashrc: executed by bash for non-login shells.
+#
+
+# Stolen from Ubuntu
+# If not interactive, don't do anything
+case $- in
+	*i*) ;;
+	  *) return;;
+esac
+
+# History ctrl {{{
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# }}}
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+
+# Fix color support for vim
+export TERM=xterm-256color
+
+case "$TERM" in
+xterm*|rxvt*)
+    PS1='\[\u@\h\]\$ '
+    ;;
+*)
+    ;;
+esac
+
+if [[ -f ~/.bash_aliases ]]; then
+	. ~/.bash_aliases
+fi
+
+
+# Stolen from ubuntu (do I need this ?)
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# Tell shell where the dotfiles are
+# This must be dynamic in the future
+export DOTFILES=~/dotfiles

@@ -6,7 +6,7 @@
 " Check where we are running
 if $OS == "Windows_NT"
 	echom "Windows"	
-	let g:myvimfiles = "$USERPROFILE\dotfiles\vim\vimfiles"
+	let g:myvimfiles =$USERPROFILE . "/dotfiles/vim/vimfiles"
 else
 	echom "POSIX"	
 	let g:myvimfiles = "~/dotfiles/vim/vimfiles"	
@@ -28,7 +28,7 @@ set directory+=/tmp//
 " }}}
 
 set foldmethod=marker
-colorscheme mycolor
+colorscheme myDark
 
 " Enable patogen
 execute pathogen#infect(myvimfiles . '/bundle/{}')

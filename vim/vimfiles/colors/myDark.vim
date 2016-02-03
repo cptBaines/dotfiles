@@ -3,7 +3,7 @@ set background=dark
 if exists("syntax_on")
 	syntax reset
 endif
-let g:colors_name = "mycolor"
+let g:colors_name = "myDark"
 
 " My definitions {{{
 highlight bniLink	guifg=#ffff00

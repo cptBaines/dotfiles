@@ -2,13 +2,12 @@
 " Settings
 " ===========================================================================
 
-
 " Check where we are running
 if $OS == "Windows_NT"
-	echom "Windows"	
-	let g:myvimfiles = "$USERPROFILE\dotfiles\vim\vimfiles"
+"	echom "Windows"	
+	let g:myvimfiles =$USERPROFILE . "/dotfiles/vim/vimfiles"
 else
-	echom "POSIX"	
+"	echom "POSIX"	
 	let g:myvimfiles = "~/dotfiles/vim/vimfiles"	
 endif
 
@@ -28,7 +27,6 @@ set directory+=/tmp//
 " }}}
 
 set foldmethod=marker
-colorscheme mycolor
 
 " Enable patogen
 execute pathogen#infect(myvimfiles . '/bundle/{}')
@@ -42,11 +40,12 @@ filetype indent on
 syntax on
 
 " choose easy readable colors
-"colorscheme mycolor
+" colorscheme mycolor
+colorscheme myDark
 
 " Fix statusline hilighting
 "hi StatusLine cterm=bold
-"hi StatusLineNC cterm=reverse
+hi StatusLineNC cterm=reverse
 
 " Setup linenumbering
 " set number 
@@ -128,7 +127,12 @@ function! Addsequence()
 endfunction
 
 " ===========================================================================
-" Sourceig other files
+" Sourceig local configurations 
 " ===========================================================================
-" source .vim/myfunc/workJournal.vim
-
+if $OS == "Windows_NT"
+"	echom "Windows"	
+	source $USERPROFILE/_vimrc.local
+else
+"	echom "POSIX"	
+	source ~/.vimrc.local
+endif

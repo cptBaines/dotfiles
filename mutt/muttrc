@@ -1,12 +1,13 @@
 set my_color_scheme="~/.mutt/mutt_colors"
+set my_accounts="~/.mutt/accounts"
 
 # Pahts ------------------------------------------------------ {{{ 
 set alias_file=~/.mutt/aliases
-set mailcap_path="~/.mailcap"
+set mailcap_path=~/.mutt/mailcap
+
 # set header_cache
 # set message_cachedir
 # set certificate_file
-# set mailcap_file
 # set tmp_dir
 # set signature
 # }}}
@@ -14,7 +15,7 @@ set mailcap_path="~/.mailcap"
 # Basic options ----------------------------------------------- {{{ 
 # set wait_key = no		# shutup, mutt
 # set mbox_type = maildir	# mailbox type
-# set timeout = 3		# idletime before scanning
+# set timeout = 10		# idletime before scanning
 # unset move			# ???? check what this does
 set delete=ask-yes		# remove ask-yes to shut up just do
 # unset confirmappend		# I think this is for mbox archive
@@ -60,9 +61,7 @@ bind index \CD  next-page
 macro index L   "lall<enter>" "clear limitfilter"
 # }}}
 
-source $my_color_scheme
 
-source $alias_file
 # This must be less that timeout of fw rules (tcp 400)
 set imap_keepalive=300
 
@@ -84,12 +83,9 @@ set sendmail_wait=-1
 set nopipe_decode
 alternative_order text/calendar text/plain text/*
 auto_view text/calendar
+auto_view text/html
+set mail_check=60
 
-# Setup mail accounts
-source ~/.mutt/local.acer
-macro index <f2> '<enter-command>source ~/.mutt/se.bnicon.public<enter><change-folder>!<enter>'
-macro index <f3> '<enter-command>source ~/.mutt/se.bnicon.bjorn<enter><change-folder>!<enter>'
-macro index <f4> '<enter-command>source ~/.mutt/local.acer<enter><change-folder>!<enter>'
 
 # Mail composing
 set include
@@ -99,11 +95,10 @@ set charset=utf-8
 set editor=vim
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
 
-#set mail_check_subscribed
-set mail_check=60
-set timeout=10
-set ssl_force_tls=yes
 
+source $my_accounts
+source $my_color_scheme
+source $alias_file
 
 #abort_nosubject: ask-yes
 #abort_unmodified: yes

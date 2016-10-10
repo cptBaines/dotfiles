@@ -1,16 +1,16 @@
-image/png; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/display
-image/jpeg; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/display
-image/jpg; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/display
-image/gif; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/display
+image/png; ~/.mutt/view_attachments.sh %s - /usr/bin/display
+image/jpeg; ~/.mutt/view_attachments.sh %s - /usr/bin/display
+image/jpg; ~/.mutt/view_attachments.sh %s - /usr/bin/display
+image/gif; ~/.mutt/view_attachments.sh %s - /usr/bin/display
 
-application/msword; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/soffice
+application/msword; ~/.mutt/view_attachments.sh %s - /usr/bin/soffice
 
 # PDF
-application/pdf; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/mupdf
+application/pdf; ~/.mutt/view_attachments.sh %s - /usr/bin/mupdf
 
 # HTML
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
-text/html; /home/bjorn/.mutt/view_attachments.sh %s - /usr/bin/firefox; needsterminal;
+text/html; ~/.mutt/view_attachments.sh %s - /usr/bin/firefox; needsterminal;
 
 # Calendare
 text/calendar;  ~/.mutt/dump-ical.py %s; copiousoutput;

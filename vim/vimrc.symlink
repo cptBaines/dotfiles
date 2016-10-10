@@ -14,7 +14,7 @@ endif
 " Runtime path {{{
 let &rtp = myvimfiles
 set rtp+=$VIM/vimfiles
-set rtp+=$VIM/vim74
+set rtp+=$VIM/vim80
 set rtp+=$VIM/vimfiles/after
 let &rtp = &rtp .",". myvimfiles . "/after"
 " }}}
@@ -46,6 +46,11 @@ colorscheme myDark
 " Fix statusline hilighting
 "hi StatusLine cterm=bold
 hi StatusLineNC cterm=reverse
+
+" Enable built in fuzzy finding
+set path+=**
+set wildmenu
+
 
 " Setup linenumbering
 " set number 

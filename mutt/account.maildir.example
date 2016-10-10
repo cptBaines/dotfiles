@@ -1,0 +1,6 @@
+# could be used with locally synced imap 
+set folder=~/Mail/se.bnicon/Inbox
+set spoolfile=~/Mail/se.bnicon/Inbox
+set record="+.Sent"
+set postponed="+.Drafts"
+set trash="+.Trash"

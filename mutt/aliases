@@ -1,0 +1,5 @@
+alias bbnicon 	bjorn@bnicon.se (Bjorn Nilsson)
+alias pbnicon 	public@bnicon.se (Public)
+alias tnop 	test@nopsledge.se
+alias bnop	b.nilsson@nopsledge.se (Bjorn Nilsson)
+alias broadcast pbnicon, tnop, bnop

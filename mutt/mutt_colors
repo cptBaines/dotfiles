@@ -1,0 +1,18 @@
+# Syntax: color object fg bg [regexp]
+# Syntax: color index fg bg [pattern]
+# Valid objects: attachment, body, bold, header, hdrdefault
+# , index, indicator, markers, message, normal, quoted
+# , quotedN, search, signature, status, tilde, tree, underline
+# The index object lets you color messages based on patterns 
+
+color normal 		color214  color0
+color indicator 	color255  color233
+color status 		color33   color234
+color body 		color255  color0     ".*"
+color body 		color244  color0     "(http|ftp|https)://"
+color header 		color244  color0     ".*"
+color header 		color214  color0     "^Subject: .*"
+color tree 		color244  color0
+color index 		red	  color0      ~F # Flagged
+color attachment 	color244  color0
+color search 	        color255  color0

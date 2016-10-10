@@ -4,7 +4,9 @@ set -g status-bg colour245
 set -g status-fg colour232
 
 set -g status-utf8 on
+set -g status-right "#(~/dotfiles/tmux/acpi_batstat.sh) | %a %d-%b-%y | %H:%M:%S |"
 set -g utf8 on
+
 
 set -g default-shell /bin/bash
 setw -g mode-keys vi

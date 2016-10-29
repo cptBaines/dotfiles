@@ -29,7 +29,7 @@ nnoremap          <leader>gpl :Dispatch! git push<CR>
 " }}}
 " ctags {{{
 " build tags for your own project with CTRL+F12
-noremap <F12> :!ctags -R --c++-kinds=+p --c-kinds=+px-d --fields=+iaS --extra=+q --languages=C,C++ .<CR> 
+noremap <F12> :!ctags -R --c++-kinds=+p --c-kinds=+px --fields=+iaS --extra=+q --languages=C,C++ .<CR> 
 " }}}
 " edit vimrc {{{
 " Make it easy to edit vimrc (mnemonic is 'e'dit 'v'imrc)
@@ -54,9 +54,16 @@ nnoremap <leader>cd :lcd %:h<cr>
 " disable highlight search
 nnoremap <leader>n :set invhls:set hls?<cr>
 
-inoremap <esc> <nop>
-inoremap jk <esc>
 
 " cscope mapping
 " mnemonic is f(ind) s(ymbol)
 nnoremap <leader>fs :cs find s <c-r>=expand("<cword>")<cr><cr>
+
+" Hangups {{{
+" Esc is to far away
+inoremap <esc> <nop>
+inoremap jk <esc>
+
+" Make it easy to save 
+nnoremap <leader>s  :w<cr>
+" }}}

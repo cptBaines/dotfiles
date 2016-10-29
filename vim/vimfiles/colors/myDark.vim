@@ -27,5 +27,6 @@ highlight clear Identifier
 highlight! def link Delimiter Normal
 highlight! def link Identifier bniBold
 highlight! def link Comment bniComment
+highlight! def link Underlined bniBold
 " }}}
 

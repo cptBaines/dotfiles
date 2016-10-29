@@ -4,6 +4,8 @@ image/jpg; ~/.mutt/view_attachments.sh %s - /usr/bin/display
 image/gif; ~/.mutt/view_attachments.sh %s - /usr/bin/display
 
 application/msword; ~/.mutt/view_attachments.sh %s - /usr/bin/soffice
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; ~/.mutt/view_attachments.sh %s - /usr/bin/soffice
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/.mutt/view_attachments.sh %s - /usr/bin/soffice
 
 # PDF
 application/pdf; ~/.mutt/view_attachments.sh %s - /usr/bin/mupdf

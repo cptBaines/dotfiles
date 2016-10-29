@@ -63,7 +63,7 @@ macro index L   "lall<enter>" "clear limitfilter"
 
 
 # This must be less that timeout of fw rules (tcp 400)
-set imap_keepalive=300
+set imap_keepalive=59
 
 # Mutt behaviour
 set mbox_type=Maildir
@@ -84,7 +84,7 @@ set nopipe_decode
 alternative_order text/calendar text/plain text/*
 auto_view text/calendar
 auto_view text/html
-set mail_check=60
+set mail_check=54
 
 
 # Mail composing

@@ -34,13 +34,26 @@ def when_str_of_start_end(s, e):
 
 def pretty_print_invitation(invitation):
     event = invitation.vevent.contents
-    title = event['summary'][0].value
-    org = event['organizer'][0]
+    keys = event.keys()
+    if 'summary' in keys:
+        title = event['summary'][0].value
+    else:
+        title = "Unassigned"
+    if 'organizer' in keys:
+        org = event['organizer'][0]
+    else:
+        org = "Unassigned"
     invitees = event['attendee']
     start = event['dtstart'][0].value
     end = event['dtend'][0].value
-    location = event['location'][0].value
-    description = event['description'][0].value
+    if 'location' in keys:
+        location = event['location'][0].value
+    else:
+        location = "Unassigned"
+    if 'description' in keys:
+        description = event['description'][0].value
+    else:
+        description = "Unassigned"
     print "="*70
     print "MEETING INVITATION".center(70)
     print "="*70

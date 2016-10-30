@@ -15,4 +15,4 @@
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/vimfiles/bundle/vim-outliner"]
 	path = vim/vimfiles/bundle/vim-outliner
-	url = https://github.com/vimoutliner/vimoutliner.git
+	url = https://github.com/cptBaines/vimoutliner

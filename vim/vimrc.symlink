@@ -141,3 +141,14 @@ else
 "	echom "POSIX"	
 	source ~/.vimrc.local
 endif
+
+augroup vgtd
+	autocmd!
+	au BufNewFile,BufRead *.vgtd setf votl 
+   	au BufNewFile,BufRead *.vgtd so <sfile>:h/dotfiles/vim/vimgtd.vim 
+augroup END
+
+augroup vgtd.arch
+	autocmd!
+	au BufNewFile,BufRead *.vgtd.arch setf votl 
+augroup END

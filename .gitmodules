@@ -13,3 +13,6 @@
 [submodule "vim/vimfiles/bundle/vim-syntastic"]
 	path = vim/vimfiles/bundle/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/vimfiles/bundle/vim-hybrid"]
+	path = vim/vimfiles/bundle/vim-hybrid
+	url = https://github.com/cptbaines/vim-hybrid

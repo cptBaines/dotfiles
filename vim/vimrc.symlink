@@ -2,7 +2,7 @@
 " Settings
 " ===========================================================================
 
-" Check where we are running
+" Check where we are running {{{
 if $OS == "Windows_NT"
 "	echom "Windows"	
 	let g:myvimfiles =$USERPROFILE . "/dotfiles/vim/vimfiles"
@@ -10,6 +10,7 @@ else
 "	echom "POSIX"	
 	let g:myvimfiles = "~/dotfiles/vim/vimfiles"	
 endif
+" }}}
 
 " Runtime path {{{
 let &rtp = myvimfiles
@@ -40,18 +41,17 @@ filetype indent on
 syntax on
 
 " choose easy readable colors
-" colorscheme mycolor
+let g:solarized_termcolors = 1
 set background=dark
-colorscheme hybrid
+colorscheme solarized
 
 " Fix statusline hilighting
 "hi StatusLine cterm=bold
-hi StatusLineNC cterm=reverse
+"hi StatusLineNC cterm=reverse
 
 " Enable built in fuzzy finding
 set path+=**
 set wildmenu
-
 
 " Setup linenumbering
 " set number 
@@ -120,7 +120,6 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-
 
 
 

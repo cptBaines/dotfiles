@@ -48,6 +48,11 @@ colorscheme hybrid
 "hi StatusLine cterm=bold
 hi StatusLineNC cterm=reverse
 
+" Enable built in fuzzy finding
+set path+=**
+set wildmenu
+
+
 " Setup linenumbering
 " set number 
 set relativenumber
@@ -144,3 +149,14 @@ else
 "	echom "POSIX"	
 	source ~/.vimrc.local
 endif
+
+augroup vgtd
+	autocmd!
+	au BufNewFile,BufRead *.vgtd setf votl 
+   	au BufNewFile,BufRead *.vgtd so <sfile>:h/dotfiles/vim/vimgtd.vim 
+augroup END
+
+augroup vgtd.arch
+	autocmd!
+	au BufNewFile,BufRead *.vgtd.arch setf votl 
+augroup END

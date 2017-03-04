@@ -1,9 +1,6 @@
 [submodule "vim/vimfiles/bundle/vim-fugitive"]
 	path = vim/vimfiles/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/vimfiles/bundle/vim-vinegar"]
-	path = vim/vimfiles/bundle/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
 [submodule "vim/vimfiles/bundle/vim-surround"]
 	path = vim/vimfiles/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
@@ -16,3 +13,9 @@
 [submodule "vim/vimfiles/bundle/vim-hybrid"]
 	path = vim/vimfiles/bundle/vim-hybrid
 	url = https://github.com/cptbaines/vim-hybrid
+[submodule "vim/vimfiles/bundle/vim-outliner"]
+	path = vim/vimfiles/bundle/vim-outliner
+	url = https://github.com/cptBaines/vimoutliner
+[submodule "vim/vimfiles/bundle/vim-vinegar"]
+	path = vim/vimfiles/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar

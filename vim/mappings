@@ -43,6 +43,10 @@ nnoremap <silent> <leader>sse :set spelllang=se<cr>
 nnoremap <silent> <leader>sen :set spelllang=en<cr>
 nnoremap <silent> <leader>tsp :set spell!<cr>
 " }}}
+" switch keyboard mapping {{{
+nnoremap <silent> <leader>se :silent call SwitchKeyboard("se")<cr>
+nnoremap <silent> <leader>us :silent call SwitchKeyboard("us")<cr>
+" }}}
 " grep mapping
 "nnoremap ,g execute ":grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 nnoremap <silent> <leader>G :echom "execute grep! . '<cWORD>' ."<cr>

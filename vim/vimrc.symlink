@@ -14,7 +14,7 @@ endif
 " Runtime path {{{
 let &rtp = myvimfiles
 set rtp+=$VIM/vimfiles
-set rtp+=$VIM/vim74
+set rtp+=$VIM/vim80
 set rtp+=$VIM/vimfiles/after
 let &rtp = &rtp .",". myvimfiles . "/after"
 " }}}
@@ -41,7 +41,8 @@ syntax on
 
 " choose easy readable colors
 " colorscheme mycolor
-colorscheme myDark
+set background=dark
+colorscheme hybrid
 
 " Fix statusline hilighting
 "hi StatusLine cterm=bold
@@ -116,7 +117,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 
-source $DOTFILES/vim/mappings
+
 
 " ===========================================================================
 " Functions 
@@ -125,6 +126,13 @@ function! Addsequence()
 	exe "normal! 02wywkiCREATE SEQUENCE \<Esc>pi_seq increment by 1;\<Esc>"
 	exe "normal! jj$ha default nextval('\<Esc>pi_seq'::regclass)\<Esc>"
 endfunction
+
+function! SwitchKeyboard(layout)
+	exe ":silent !setxkbmap -layout " . a:layout . " -option ctrl:nocaps"
+	exe ":redraw!"
+endfunction
+
+source $DOTFILES/vim/mappings
 
 " ===========================================================================
 " Sourceig local configurations 

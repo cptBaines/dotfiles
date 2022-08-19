@@ -35,6 +35,12 @@ noremap <F12> :!ctags -R --c++-kinds=+p --c-kinds=+px --fields=+iaS --extra=+q -
 " Make it easy to edit vimrc (mnemonic is 'e'dit 'v'imrc)
 nnoremap <silent> <leader>ev :e $MYVIMRC<cr>
 
+" Make it easy to edit this flie (mnemonic is 'e'dit 'm'apping)
+nnoremap <silent> <leader>em :exec "edit " . expand(g:myvimconfig) . "/mappings"<cr>
+
+" Make it easy to edit local vim config (mnemonic is 'e'dit 'v'im 'l'ocal)
+nnoremap <silent> <leader>evl :edit  $MYVIMRC.local<CR>
+
 " Make it easy to source the changed settings (mnemonic is 's'ource 'v'imrc)
 nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
 " }}}
@@ -55,9 +61,15 @@ nnoremap <silent> <leader>G :echom "execute grep! . '<cWORD>' ."<cr>
 " cd to the directory containing the file in the buffer
 nnoremap <leader>cd :lcd %:h<cr>
 
+" close all buffers and duplicate current one
+nnoremap <leader>dc :%bd <bar> e# <bar> vsp<cr>
+
 " disable highlight search
 nnoremap <leader>n :set invhls:set hls?<cr>
 
+" find command using vimgrep
+" ,fc - find caller
+nmap <leader>fc "fyiw<C-W>p:vimgrep /<C-R>f(/ **/*.c **/*.h<CR>:copen<CR>
 
 " cscope mapping
 " mnemonic is f(ind) s(ymbol)
@@ -65,8 +77,8 @@ nnoremap <leader>fs :cs find s <c-r>=expand("<cword>")<cr><cr>
 
 " Hangups {{{
 " Esc is to far away
-inoremap <esc> <nop>
-inoremap jk <esc>
+" inoremap <esc> <nop>
+" inoremap jk <esc>
 
 " Make it easy to save 
 nnoremap <leader>s  :w<cr>

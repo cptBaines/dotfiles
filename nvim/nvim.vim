@@ -55,12 +55,26 @@ set scrolloff=8
 " Disable popup menues
 set completeopt=longest 
 
+" Disable wild menu get the suggestions directly in text
+set nowildmenu
+
 " Setup Runtime path to include g:myvimfiles {{{
 let &runtimepath = g:myvimfiles . "," . &runtimepath . "," . g:myvimfiles . "/after"
 " }}}
 
+" Color must be set after we fixed the runtime if we want to find any custom
+" colorschems
+colorscheme mycolor
+
+" ===========================================================================
+" Add plugins, templates, source mappings and any local config 
+" ===========================================================================
+
 " Enable patogen (load plugins)
 execute pathogen#infect(myvimfiles . '/bundle/{}')
+
+let $VIM_TMPL_DIR = myvimfiles . "/templates"
+exe "source " . $VIM_TMPL_DIR . "/autocmd.vim"
 
 " Sorce default mappings 
 exe "source " . myvimconfig . "/mappings.vim"
@@ -69,10 +83,8 @@ exe "source " . myvimconfig . "/mappings.vim"
 " Sourceig local configurations 
 " ===========================================================================
 if $OS == "Windows_NT"
-"	echom "Windows"	
 	source $USERPROFILE/nvim_local.vim
 else
-"	echom "POSIX"	
 	source ~/.nvim_local.vim
 endif
 

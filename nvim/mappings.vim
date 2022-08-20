@@ -29,11 +29,16 @@ nnoremap <silent> <leader>evl :edit  ~/nvim_local.vim<CR>
 nnoremap <silent> <leader>sv :so ~/Appdata/Local/nvim/init.vim<cr>
 " }}}
 
+noremap <silent> <leader>ec :exec "edit ". expand(g:myvimfiles) ."/colors/". colors_name .".vim"<cr>
+
 " spelling {{{
 nnoremap <silent> <leader>sse :set spelllang=se<cr>
 nnoremap <silent> <leader>sen :set spelllang=en<cr>
 nnoremap <silent> <leader>tsp :set spell!<cr>
 " }}}
+
+" nvim seems to have strange mapping for Y reset it
+nnoremap <silent> Y yy
 
 " Make it easy to save 
 nnoremap <leader>s  :w<cr>

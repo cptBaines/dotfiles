@@ -33,7 +33,7 @@ set vb
 set history=10
 
 " set commandline height to two rows
-set ch=2
+set ch=1
 
 " Make the 'cw' and like commands put a $ at the end instead of just deliting
 " the text and replacing it. B is included to handle conflicts with snipmate
@@ -65,6 +65,11 @@ let &runtimepath = g:myvimfiles . "," . &runtimepath . "," . g:myvimfiles . "/af
 " Color must be set after we fixed the runtime if we want to find any custom
 " colorschems
 colorscheme mycolor
+
+" fix guicursor
+set guicursor=n-v-c-sm:block-Cursor
+set guicursor+=i-ci-ve:ver25
+set guicursor+=r-cr-o:hor20
 
 " ===========================================================================
 " Add plugins, templates, source mappings and any local config 

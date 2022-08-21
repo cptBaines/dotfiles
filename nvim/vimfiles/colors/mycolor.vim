@@ -31,6 +31,7 @@ exe "let s:bg_dark		= ' guibg=" . s:prussian_blue	."'"
 exe "let s:bg_light		= ' guibg=" . s:light			."'"
 exe "let s:bg_text		= ' guibg=" . s:jb_fg			."'"
 exe "let s:bg_nontext	= ' guibg=" . s:nontext			."'"
+exe "let s:bg_orange	= ' guibg=" . s:orange			."'"
 
 
 exe "let s:fg_none		= ' guifg=" . s:none			."'"
@@ -42,6 +43,7 @@ exe "let s:fg_status	= ' guifg=" . s:jb_status		."'"
 exe "let s:fg_stmt		= ' guifg=" . s:jb_stmt			."'"
 exe "let s:fg_nontext	= ' guifg=" . s:nontext			."'"
 exe "let s:fg_orange	= ' guifg=" . s:orange			."'"
+exe "let s:fg_back		= ' guifg=" . s:jb_bg			."'"
 
 
 exe "hi! Normal" 		.s:fg_text		.s:bg_back
@@ -54,8 +56,11 @@ exe "hi! LineNr"		.s:fg_text		.s:bg_back
 exe "hi! NonText"		.s:fg_nontext	.s:bg_back		." gui=None"
 exe "hi! Todo"			.s:fg_green		.s:bg_nontext	." gui=bold"
 exe "hi! MatchParen"	.s:fg_text		.s:bg_light		." gui=bold"
+exe "hi! Cursor"		.s:fg_back		.s:bg_orange	." gui=bold"
 
 
+hi! def link lCursor 		Cursor
+hi! def link TermCursor 	Cursor
 hi! def link WildMenu 		MatchParen
 hi! def link Pmenu 			Normal
 hi! def link SignColumn		Normal

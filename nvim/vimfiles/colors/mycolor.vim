@@ -24,6 +24,8 @@ let s:dark_fg			= "#223B61"
 let s:light				= "#3862A1"
 let s:none				= "NONE"
 let s:orange			= "#996600"
+let s:added				= "#005500"
+let s:removed			= "#550000"
 
 exe "let s:bg_none		= ' guibg=" . s:none			."'"
 exe "let s:bg_back		= ' guibg=" . s:jb_bg			."'"
@@ -32,6 +34,8 @@ exe "let s:bg_light		= ' guibg=" . s:light			."'"
 exe "let s:bg_text		= ' guibg=" . s:jb_fg			."'"
 exe "let s:bg_nontext	= ' guibg=" . s:nontext			."'"
 exe "let s:bg_orange	= ' guibg=" . s:orange			."'"
+exe "let s:bg_added		= ' guibg=" . s:added			."'"
+exe "let s:bg_removed	= ' guibg=" . s:removed			."'"
 
 
 exe "let s:fg_none		= ' guifg=" . s:none			."'"
@@ -57,6 +61,8 @@ exe "hi! NonText"		.s:fg_nontext	.s:bg_back		." gui=None"
 exe "hi! Todo"			.s:fg_green		.s:bg_nontext	." gui=bold"
 exe "hi! MatchParen"	.s:fg_text		.s:bg_light		." gui=bold"
 exe "hi! Cursor"		.s:fg_back		.s:bg_orange	." gui=bold"
+exe "hi! diffRemoved" 	.s:fg_text		.s:bg_removed 	." gui=None"
+exe "hi! diffAdded" 	.s:fg_text		.s:bg_added 	." gui=None"
 
 
 hi! def link lCursor 		Cursor

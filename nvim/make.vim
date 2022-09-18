@@ -44,7 +44,7 @@ function! InsHeaderDecklarationsFromCFile()
 	sp %:p:r.h
 	exec 'normal! GO'
 	/^\/\/ Begin fdecl/,/^\/\/ End fdecl/d
-	exec 'normal! I// Begin fdeclEnd fdeclk"fpgg'
+	exec 'normal! I// Begin fdecl// End fdeclk"fpgg'
 	/^\/\/ Begin fdecl/,/^\/\/ End fdecl/s/)$/);/
 	"wq
 endfunction
